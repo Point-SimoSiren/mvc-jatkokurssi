@@ -1,0 +1,795 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B386AFB6-0833-421F-B90C-56C392D33DBD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebAppEkaS2019</RootNamespace>
+    <AssemblyName>WebAppEkaS2019</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ShippersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Categories.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contacts.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contacts_apu.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contacts_apu2.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contacts_apu3.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerDemographics.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customers.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cust_apu.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Documentation.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employees.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\emp_apu.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Logins.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NorthwindModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NorthwindModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NorthwindModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Orders.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\orders_tmp.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order_Details.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Products.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Region.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shippers.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Suppliers.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\supp_apu.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Territories.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\OrderRows.cs" />
+    <Compile Include="ViewModels\OrderSummaryData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Icons\alarm-fill.svg" />
+    <Content Include="Icons\alarm.svg" />
+    <Content Include="Icons\alert-circle-fill.svg" />
+    <Content Include="Icons\alert-circle.svg" />
+    <Content Include="Icons\alert-octagon-fill.svg" />
+    <Content Include="Icons\alert-octagon.svg" />
+    <Content Include="Icons\alert-square-fill.svg" />
+    <Content Include="Icons\alert-square.svg" />
+    <Content Include="Icons\alert-triangle-fill.svg" />
+    <Content Include="Icons\alert-triangle.svg" />
+    <Content Include="Icons\archive-fill.svg" />
+    <Content Include="Icons\archive.svg" />
+    <Content Include="Icons\arrow-bar-bottom.svg" />
+    <Content Include="Icons\arrow-bar-left.svg" />
+    <Content Include="Icons\arrow-bar-right.svg" />
+    <Content Include="Icons\arrow-bar-up.svg" />
+    <Content Include="Icons\arrow-clockwise.svg" />
+    <Content Include="Icons\arrow-counterclockwise.svg" />
+    <Content Include="Icons\arrow-down-left.svg" />
+    <Content Include="Icons\arrow-down-right.svg" />
+    <Content Include="Icons\arrow-down-short.svg" />
+    <Content Include="Icons\arrow-down.svg" />
+    <Content Include="Icons\arrow-left-right.svg" />
+    <Content Include="Icons\arrow-left-short.svg" />
+    <Content Include="Icons\arrow-left.svg" />
+    <Content Include="Icons\arrow-repeat.svg" />
+    <Content Include="Icons\arrow-right-short.svg" />
+    <Content Include="Icons\arrow-right.svg" />
+    <Content Include="Icons\arrow-up-down.svg" />
+    <Content Include="Icons\arrow-up-left.svg" />
+    <Content Include="Icons\arrow-up-right.svg" />
+    <Content Include="Icons\arrow-up-short.svg" />
+    <Content Include="Icons\arrow-up.svg" />
+    <Content Include="Icons\arrows-angle-contract.svg" />
+    <Content Include="Icons\arrows-angle-expand.svg" />
+    <Content Include="Icons\arrows-collapse.svg" />
+    <Content Include="Icons\arrows-expand.svg" />
+    <Content Include="Icons\arrows-fullscreen.svg" />
+    <Content Include="Icons\at.svg" />
+    <Content Include="Icons\award.svg" />
+    <Content Include="Icons\backspace-fill.svg" />
+    <Content Include="Icons\backspace-reverse-fill.svg" />
+    <Content Include="Icons\backspace-reverse.svg" />
+    <Content Include="Icons\backspace.svg" />
+    <Content Include="Icons\bar-chart-fill.svg" />
+    <Content Include="Icons\bar-chart.svg" />
+    <Content Include="Icons\battery-charging.svg" />
+    <Content Include="Icons\battery-full.svg" />
+    <Content Include="Icons\battery.svg" />
+    <Content Include="Icons\bell-fill.svg" />
+    <Content Include="Icons\bell.svg" />
+    <Content Include="Icons\blockquote-left.svg" />
+    <Content Include="Icons\blockquote-right.svg" />
+    <Content Include="Icons\book-half-fill.svg" />
+    <Content Include="Icons\book.svg" />
+    <Content Include="Icons\bookmark-fill.svg" />
+    <Content Include="Icons\bookmark.svg" />
+    <Content Include="Icons\bootstrap-fill.svg" />
+    <Content Include="Icons\bootstrap-reboot.svg" />
+    <Content Include="Icons\bootstrap.svg" />
+    <Content Include="Icons\box-arrow-bottom-left.svg" />
+    <Content Include="Icons\box-arrow-bottom-right.svg" />
+    <Content Include="Icons\box-arrow-down.svg" />
+    <Content Include="Icons\box-arrow-left.svg" />
+    <Content Include="Icons\box-arrow-right.svg" />
+    <Content Include="Icons\box-arrow-up-left.svg" />
+    <Content Include="Icons\box-arrow-up-right.svg" />
+    <Content Include="Icons\box-arrow-up.svg" />
+    <Content Include="Icons\braces.svg" />
+    <Content Include="Icons\brightness-fill-high.svg" />
+    <Content Include="Icons\brightness-fill-low.svg" />
+    <Content Include="Icons\brightness-high.svg" />
+    <Content Include="Icons\brightness-low.svg" />
+    <Content Include="Icons\brush.svg" />
+    <Content Include="Icons\bucket-fill.svg" />
+    <Content Include="Icons\bucket.svg" />
+    <Content Include="Icons\building.svg" />
+    <Content Include="Icons\bullseye.svg" />
+    <Content Include="Icons\calendar-fill.svg" />
+    <Content Include="Icons\calendar.svg" />
+    <Content Include="Icons\camera-video-fill.svg" />
+    <Content Include="Icons\camera-video.svg" />
+    <Content Include="Icons\camera.svg" />
+    <Content Include="Icons\capslock-fill.svg" />
+    <Content Include="Icons\capslock.svg" />
+    <Content Include="Icons\chat-fill.svg" />
+    <Content Include="Icons\chat.svg" />
+    <Content Include="Icons\check-box.svg" />
+    <Content Include="Icons\check-circle.svg" />
+    <Content Include="Icons\check.svg" />
+    <Content Include="Icons\chevron-compact-down.svg" />
+    <Content Include="Icons\chevron-compact-left.svg" />
+    <Content Include="Icons\chevron-compact-right.svg" />
+    <Content Include="Icons\chevron-compact-up.svg" />
+    <Content Include="Icons\chevron-down.svg" />
+    <Content Include="Icons\chevron-left.svg" />
+    <Content Include="Icons\chevron-right.svg" />
+    <Content Include="Icons\chevron-up.svg" />
+    <Content Include="Icons\circle-fill.svg" />
+    <Content Include="Icons\circle-half.svg" />
+    <Content Include="Icons\circle-slash.svg" />
+    <Content Include="Icons\circle.svg" />
+    <Content Include="Icons\clock-fill.svg" />
+    <Content Include="Icons\clock.svg" />
+    <Content Include="Icons\cloud-download.svg" />
+    <Content Include="Icons\cloud-fill.svg" />
+    <Content Include="Icons\cloud-upload.svg" />
+    <Content Include="Icons\cloud.svg" />
+    <Content Include="Icons\code-slash.svg" />
+    <Content Include="Icons\code.svg" />
+    <Content Include="Icons\columns-gutters.svg" />
+    <Content Include="Icons\columns.svg" />
+    <Content Include="Icons\command.svg" />
+    <Content Include="Icons\compass.svg" />
+    <Content Include="Icons\cone-striped.svg" />
+    <Content Include="Icons\cone.svg" />
+    <Content Include="Icons\controller.svg" />
+    <Content Include="Icons\credit-card.svg" />
+    <Content Include="Icons\cursor-fill.svg" />
+    <Content Include="Icons\cursor.svg" />
+    <Content Include="Icons\dash.svg" />
+    <Content Include="Icons\diamond-half.svg" />
+    <Content Include="Icons\diamond.svg" />
+    <Content Include="Icons\display-fill.svg" />
+    <Content Include="Icons\display.svg" />
+    <Content Include="Icons\document-code.svg" />
+    <Content Include="Icons\document-diff.svg" />
+    <Content Include="Icons\document-richtext.svg" />
+    <Content Include="Icons\document-spreadsheet.svg" />
+    <Content Include="Icons\document-text.svg" />
+    <Content Include="Icons\document.svg" />
+    <Content Include="Icons\documents-alt.svg" />
+    <Content Include="Icons\documents.svg" />
+    <Content Include="Icons\dot.svg" />
+    <Content Include="Icons\download.svg" />
+    <Content Include="Icons\egg-fried.svg" />
+    <Content Include="Icons\eject-fill.svg" />
+    <Content Include="Icons\eject.svg" />
+    <Content Include="Icons\envelope-fill.svg" />
+    <Content Include="Icons\envelope-open-fill.svg" />
+    <Content Include="Icons\envelope-open.svg" />
+    <Content Include="Icons\envelope.svg" />
+    <Content Include="Icons\eye-fill.svg" />
+    <Content Include="Icons\eye-slash-fill.svg" />
+    <Content Include="Icons\eye-slash.svg" />
+    <Content Include="Icons\eye.svg" />
+    <Content Include="Icons\filter.svg" />
+    <Content Include="Icons\flag-fill.svg" />
+    <Content Include="Icons\flag.svg" />
+    <Content Include="Icons\folder-fill.svg" />
+    <Content Include="Icons\folder-symlink-fill.svg" />
+    <Content Include="Icons\folder-symlink.svg" />
+    <Content Include="Icons\folder.svg" />
+    <Content Include="Icons\fonts.svg" />
+    <Content Include="Icons\forward-fill.svg" />
+    <Content Include="Icons\forward.svg" />
+    <Content Include="Icons\gear-fill.svg" />
+    <Content Include="Icons\gear-wide-connected.svg" />
+    <Content Include="Icons\gear-wide.svg" />
+    <Content Include="Icons\gear.svg" />
+    <Content Include="Icons\geo.svg" />
+    <Content Include="Icons\graph-down.svg" />
+    <Content Include="Icons\graph-up.svg" />
+    <Content Include="Icons\grid-fill.svg" />
+    <Content Include="Icons\grid.svg" />
+    <Content Include="Icons\hammer.svg" />
+    <Content Include="Icons\hash.svg" />
+    <Content Include="Icons\heart-fill.svg" />
+    <Content Include="Icons\heart.svg" />
+    <Content Include="Icons\house-fill.svg" />
+    <Content Include="Icons\house.svg" />
+    <Content Include="Icons\image-alt.svg" />
+    <Content Include="Icons\image-fill.svg" />
+    <Content Include="Icons\image.svg" />
+    <Content Include="Icons\images.svg" />
+    <Content Include="Icons\inbox-fill.svg" />
+    <Content Include="Icons\inbox.svg" />
+    <Content Include="Icons\inboxes-fill.svg" />
+    <Content Include="Icons\inboxes.svg" />
+    <Content Include="Icons\info-fill.svg" />
+    <Content Include="Icons\info-square-fill.svg" />
+    <Content Include="Icons\info-square.svg" />
+    <Content Include="Icons\info.svg" />
+    <Content Include="Icons\justify-left.svg" />
+    <Content Include="Icons\justify-right.svg" />
+    <Content Include="Icons\justify.svg" />
+    <Content Include="Icons\kanban-fill.svg" />
+    <Content Include="Icons\kanban.svg" />
+    <Content Include="Icons\laptop.svg" />
+    <Content Include="Icons\layout-sidebar-reverse.svg" />
+    <Content Include="Icons\layout-sidebar.svg" />
+    <Content Include="Icons\layout-split.svg" />
+    <Content Include="Icons\list-check.svg" />
+    <Content Include="Icons\list-ol.svg" />
+    <Content Include="Icons\list-task.svg" />
+    <Content Include="Icons\list-ul.svg" />
+    <Content Include="Icons\list.svg" />
+    <Content Include="Icons\lock-fill.svg" />
+    <Content Include="Icons\lock.svg" />
+    <Content Include="Icons\map.svg" />
+    <Content Include="Icons\mic.svg" />
+    <Content Include="Icons\moon.svg" />
+    <Content Include="Icons\music-player-fill.svg" />
+    <Content Include="Icons\music-player.svg" />
+    <Content Include="Icons\option.svg" />
+    <Content Include="Icons\outlet.svg" />
+    <Content Include="Icons\pause-fill.svg" />
+    <Content Include="Icons\pause.svg" />
+    <Content Include="Icons\pen.svg" />
+    <Content Include="Icons\pencil.svg" />
+    <Content Include="Icons\people-fill.svg" />
+    <Content Include="Icons\people.svg" />
+    <Content Include="Icons\person-fill.svg" />
+    <Content Include="Icons\person.svg" />
+    <Content Include="Icons\phone-landscape.svg" />
+    <Content Include="Icons\phone.svg" />
+    <Content Include="Icons\pie-chart-fill.svg" />
+    <Content Include="Icons\pie-chart.svg" />
+    <Content Include="Icons\play-fill.svg" />
+    <Content Include="Icons\play.svg" />
+    <Content Include="Icons\plug.svg" />
+    <Content Include="Icons\plus.svg" />
+    <Content Include="Icons\power.svg" />
+    <Content Include="Icons\question-fill.svg" />
+    <Content Include="Icons\question-square-fill.svg" />
+    <Content Include="Icons\question-square.svg" />
+    <Content Include="Icons\question.svg" />
+    <Content Include="Icons\reply-all-fill.svg" />
+    <Content Include="Icons\reply-all.svg" />
+    <Content Include="Icons\reply-fill.svg" />
+    <Content Include="Icons\reply.svg" />
+    <Content Include="Icons\screwdriver.svg" />
+    <Content Include="Icons\search.svg" />
+    <Content Include="Icons\shield-fill.svg" />
+    <Content Include="Icons\shield-lock-fill.svg" />
+    <Content Include="Icons\shield-lock.svg" />
+    <Content Include="Icons\shield-shaded.svg" />
+    <Content Include="Icons\shield.svg" />
+    <Content Include="Icons\shift-fill.svg" />
+    <Content Include="Icons\shift.svg" />
+    <Content Include="Icons\skip-backward-fill.svg" />
+    <Content Include="Icons\skip-backward.svg" />
+    <Content Include="Icons\skip-end-fill.svg" />
+    <Content Include="Icons\skip-end.svg" />
+    <Content Include="Icons\skip-forward-fill.svg" />
+    <Content Include="Icons\skip-forward.svg" />
+    <Content Include="Icons\skip-start-fill.svg" />
+    <Content Include="Icons\skip-start.svg" />
+    <Content Include="Icons\speaker.svg" />
+    <Content Include="Icons\square-fill.svg" />
+    <Content Include="Icons\square-half.svg" />
+    <Content Include="Icons\square.svg" />
+    <Content Include="Icons\star-fill.svg" />
+    <Content Include="Icons\star-half.svg" />
+    <Content Include="Icons\star.svg" />
+    <Content Include="Icons\stop-fill.svg" />
+    <Content Include="Icons\stop.svg" />
+    <Content Include="Icons\stopwatch-fill.svg" />
+    <Content Include="Icons\stopwatch.svg" />
+    <Content Include="Icons\sun.svg" />
+    <Content Include="Icons\table.svg" />
+    <Content Include="Icons\tablet-landscape.svg" />
+    <Content Include="Icons\tablet.svg" />
+    <Content Include="Icons\tag-fill.svg" />
+    <Content Include="Icons\tag.svg" />
+    <Content Include="Icons\terminal-fill.svg" />
+    <Content Include="Icons\terminal.svg" />
+    <Content Include="Icons\text-center.svg" />
+    <Content Include="Icons\text-indent-left.svg" />
+    <Content Include="Icons\text-indent-right.svg" />
+    <Content Include="Icons\text-left.svg" />
+    <Content Include="Icons\text-right.svg" />
+    <Content Include="Icons\three-dots-vertical.svg" />
+    <Content Include="Icons\three-dots.svg" />
+    <Content Include="Icons\toggle-off.svg" />
+    <Content Include="Icons\toggle-on.svg" />
+    <Content Include="Icons\toggles.svg" />
+    <Content Include="Icons\tools.svg" />
+    <Content Include="Icons\trash-fill.svg" />
+    <Content Include="Icons\trash.svg" />
+    <Content Include="Icons\triangle-fill.svg" />
+    <Content Include="Icons\triangle-half.svg" />
+    <Content Include="Icons\triangle.svg" />
+    <Content Include="Icons\trophy.svg" />
+    <Content Include="Icons\tv-fill.svg" />
+    <Content Include="Icons\tv.svg" />
+    <Content Include="Icons\type-bold.svg" />
+    <Content Include="Icons\type-h1.svg" />
+    <Content Include="Icons\type-h2.svg" />
+    <Content Include="Icons\type-h3.svg" />
+    <Content Include="Icons\type-italic.svg" />
+    <Content Include="Icons\type-strikethrough.svg" />
+    <Content Include="Icons\type-underline.svg" />
+    <Content Include="Icons\type.svg" />
+    <Content Include="Icons\unlock-fill.svg" />
+    <Content Include="Icons\unlock.svg" />
+    <Content Include="Icons\upload.svg" />
+    <Content Include="Icons\volume-down-fill.svg" />
+    <Content Include="Icons\volume-down.svg" />
+    <Content Include="Icons\volume-mute-fill.svg" />
+    <Content Include="Icons\volume-mute.svg" />
+    <Content Include="Icons\volume-up-fill.svg" />
+    <Content Include="Icons\volume-up.svg" />
+    <Content Include="Icons\wallet.svg" />
+    <Content Include="Icons\watch.svg" />
+    <Content Include="Icons\wifi.svg" />
+    <Content Include="Icons\window.svg" />
+    <Content Include="Icons\wrench.svg" />
+    <Content Include="Icons\x-circle-fill.svg" />
+    <Content Include="Icons\x-circle.svg" />
+    <Content Include="Icons\x-octagon-fill.svg" />
+    <Content Include="Icons\x-octagon.svg" />
+    <Content Include="Icons\x-square-fill.svg" />
+    <Content Include="Icons\x-square.svg" />
+    <Content Include="Icons\x.svg" />
+    <Content Include="Models\NorthwindModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthwindModel.edmx</DependentUpon>
+      <LastGenOutput>NorthwindModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\NorthwindModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthwindModel.edmx</DependentUpon>
+      <LastGenOutput>NorthwindModel.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\NorthwindModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NorthwindModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NorthwindModel.edmx.diagram">
+      <DependentUpon>NorthwindModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Laskuri.cshtml" />
+    <Content Include="Views\Home\Map.cshtml" />
+    <Content Include="Views\Products\Index2.cshtml" />
+    <Content Include="Views\Shippers\Index.cshtml" />
+    <Content Include="Views\Shippers\Edit.cshtml" />
+    <Content Include="Views\Shippers\Create.cshtml" />
+    <Content Include="Views\Shippers\Delete.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Contacts\Create.cshtml" />
+    <Content Include="Views\Contacts\Delete.cshtml" />
+    <Content Include="Views\Contacts\Details.cshtml" />
+    <Content Include="Views\Contacts\Edit.cshtml" />
+    <Content Include="Views\Contacts\Index.cshtml" />
+    <Content Include="Views\Products\ProdCards.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Orders\Ordersummary.cshtml" />
+    <Content Include="Views\Shared\_NavbarLoggedIn.cshtml" />
+    <Content Include="Views\Shared\_NavbarLoggedOut.cshtml" />
+    <Content Include="Views\Home\_LoginModal.cshtml" />
+    <Content Include="Views\Orders\TilausOtsikot.cshtml" />
+    <Content Include="Views\Orders\_TilausRivit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Views\Shared\EditorTemplates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12016</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12016/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

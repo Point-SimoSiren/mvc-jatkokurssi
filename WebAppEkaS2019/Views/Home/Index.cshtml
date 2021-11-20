@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+@*JQuery, joka suoritetaan aina, kun sivu latautuu*@
+@section scripts {
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            if (@ViewBag.LoginError == 1) {
+                $('#LoginRuutu').modal('show');
+            }
+
+        });
+    </script>
+}
+
+<div class="jumbotron">
+    <h2>Minun ensimmäinen ASP.NET-sovellus</h2>
+    @*BS4/SVG -ikonit*@
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg"><img src="~/Icons/star-fill.svg" alt="ASP.NET" width="32" height="32" title="ASP.NET"> ASP.NET-sivut &raquo;</a></p>
+    <p><a href="https://asp.net"><img src="~/Icons/star-fill.svg" alt="ASP.NET" width="32" height="32" title="ASP.NET"></a></p>
+
+
+    @*FAS (Font Awesome) -ikonit*@
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg fas fa-car"> ASP.NET-sivut</a></p>
+    <h1><a href="https://asp.net" class="fas fa-car" title="ASP.NET-sivut"></a></h1>
+
+</div>
+
+@{
+    Html.RenderPartial("_LoginModal");
+}
+
+

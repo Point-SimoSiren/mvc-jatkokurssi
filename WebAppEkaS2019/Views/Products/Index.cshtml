@@ -1,0 +1,80 @@
+﻿@model PagedList.IPagedList<WebAppEkaS2019.Models.Products>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!--tämä on JQueryä-->
+@section scripts {
+    <script type="text/javascript">
+        $("#singleSelectedCategoryID").on("change", function () {
+            //Getting Value
+            var selValue = $("#singleSelectedCategoryID").val();
+            document.getElementById("ProductCategory").value = selValue;
+        });
+    </script>
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "Products", FormMethod.Get))
+{
+    <div class="input-group">
+        <p class="px-1">@Html.Label("Find by name:")</p>
+        <p class="px-1">@Html.TextBox("SearchString1", ViewBag.currentFilter1 as string, new { @class = "form-control" })</p>
+        <p class="px-1">@Html.Label("Find by Product Category:")</p>
+        <p class="px-1">@Html.Hidden("ProductCategory", ViewBag.currentFilter1 as string, new { @id = "ProductCategory", @class = "form-control" })</p> @*piilotettu kenttä, jolla tehdään kontrollerihaku*@
+        <p class="px-1">@Html.DropDownList("CategoryID", null, htmlAttributes: new { @id = "singleSelectedCategoryID", @class = "form-control" })</p>
+        <p class="px-1"><input type="submit" value="Search" class="form-control" /></p>
+    </div>
+
+}
+
+<table class="table">
+    <tr>
+        <th>@Html.ActionLink("Tuotteen nimi", "Index", new { sortOrder = ViewBag.ProductNameSortParm, currentFilter1 = ViewBag.currentFilter1, currentProductCategory = ViewBag.currentProductCategory })</th>
+        <th>QuantityPerUnit</th>
+        <th>@Html.ActionLink("A-hinta", "Index", new { sortOrder = ViewBag.UnitPriceSortParm, currentFilter1 = ViewBag.currentFilter1, currentProductCategory = ViewBag.currentProductCategory })</th>
+        <th>UnitsInStock</th>
+        <th>UnitsOnOrder</th>
+        <th>ReorderLevel</th>
+        <th>Discontinued</th>
+        <th>ImageLink</th>
+        <th>ProductCategoryName</th>
+        <th>SupplierCompanyName</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
+            <td>@Html.DisplayFor(modelItem => item.QuantityPerUnit)</td>
+            <td>@Html.DisplayFor(modelItem => item.UnitPrice)</td>
+            <td>@Html.DisplayFor(modelItem => item.UnitsInStock)</td>
+            <td>@Html.DisplayFor(modelItem => item.UnitsOnOrder)</td>
+            <td>@Html.DisplayFor(modelItem => item.ReorderLevel)</td>
+            <td>@Html.DisplayFor(modelItem => item.Discontinued)</td>
+            <td>@Html.DisplayFor(modelItem => item.ImageLink)</td>
+            <td>@Html.DisplayFor(modelItem => item.Categories.CategoryName)</td>
+            <td>@Html.DisplayFor(modelItem => item.Suppliers.CompanyName)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProductID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter1 = ViewBag.currentFilter1, currentProductCategory = ViewBag.currentProductCategory }))
